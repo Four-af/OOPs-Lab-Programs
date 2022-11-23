@@ -5,77 +5,47 @@
 #include <string>
 using namespace std;
 
-const float VAL = 82.30;
-
-class rupee
+// base class
+class Media
 {
-    float r;
+    string title;
+    string publication;
 
 public:
-    rupee()
+    Media()
     {
-        r = 0.0;
+        title = "NONE";
+        publication = "NONE";
     }
-    void inINR(float a)
+}
+
+// derived class books
+class books : public Media
+{
+    int page_no;
+
+public:
+    books()
     {
-        r = a;
-    }
-    rupee(float dlr)
-    {
-        r = dlr;
-    }
-    void printinr()
-    {
-        cout << fixed;
-        cout << "Value in INR : " << setprecision(2) << r << endl;
-    }
-    float getInr()
-    {
-        return r;
+        page_no = 0;
     }
 };
 
-class dollar
+// derived class video_tapes
+class video_tapes : : public Media
 {
-    float d;
+    int time;
 
 public:
-    dollar()
+    video_tapes()
     {
-        d = 0.0;
-    }
-    void inDlr(float a)
-    {
-        d = a;
-    }
-    dollar(rupee rr)
-    {
-        d = rr.getInr() / VAL;
-    }
-    operator rupee()
-    {
-        return (rupee(d * VAL));
-    }
-    void printdlr()
-    {
-        cout << fixed;
-        cout << "Value in Dollar : " << setprecision(2) << d << "\n"
-             << endl;
+        time = 0;
     }
 };
 
+// main function
 int main()
 {
-    rupee r1, r2;
-    dollar d1, d2;
-    float a, b;
-    cout << "\nEnter a dollar value and rupee value : ";
-    cin >> a >> b;
-    d1.inDlr(a);
-    r2.inINR(b);
-    r1 = d1; // operator overloading in source class
-    d2 = r2; // constructor in destination class
-    r1.printinr();
-    d2.printdlr();
+    // Objects of Book Video and Media
     return 0;
 }
