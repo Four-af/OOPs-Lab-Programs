@@ -1,8 +1,8 @@
-// Write a java program that implements a multi-thread application that has three
-// threads. First thread generates random integer every 1 second and if the value is even,
-// second thread computes the square of the number and prints. If the value is odd, the third
-// thread will print the value of cube of the number.
-
+/*  Write a java program that implements a multi-thread application that has three
+ threads. First thread generates random integer every 1 second and if the value is even,
+ second thread computes the square of the number and prints. If the value is odd, the third
+ thread will print the value of cube of the number.
+*/
 import java.util.Random;
 
 class RandomNumberThread extends Thread {
@@ -11,7 +11,7 @@ class RandomNumberThread extends Thread {
     Random random = new Random();
     for (int i = 0; i < 10; i++) {
       int randomInteger = random.nextInt(100);
-      System.out.println("Random Integer generated: " + randomInteger);
+      System.out.println("\nRandom Integer generated: " + randomInteger);
       if ((randomInteger % 2) == 0) {
         SquareThread sThread = new SquareThread(randomInteger);
         sThread.start();
@@ -25,6 +25,7 @@ class RandomNumberThread extends Thread {
         System.out.println(ex);
       }
     }
+    System.out.println("\n");
   }
 }
 
@@ -54,7 +55,7 @@ class CubeThread extends Thread {
   }
 }
 
-class OOPSLabProgram10 {
+class P10_multithreading {
 
   public static void main(String[] args) {
     RandomNumberThread rnThread = new RandomNumberThread();
