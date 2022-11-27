@@ -1,3 +1,12 @@
+/*Write a C++ program based on following scenario:
+Consider an example of a bookshop which sells books and video tapes. These two classes are
+inherited from the base class called media. The media class has command data members such as
+title and publication. The book class has data members for storing a number of pages in a book,
+and the tape class has the playing time in a tape. Each class will have member functions such as
+read() and show(). In the base class, these members have to be defined as virtual functions. Write
+a program which models the class hierarchy for the bookshop and processes objects of these classes
+using pointers to the base class.*/
+
 #include <bits/stdc++.h>
 #include <iostream>
 using namespace std;
